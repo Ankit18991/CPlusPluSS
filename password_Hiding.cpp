@@ -22,31 +22,25 @@ void check_Password()
     cout << "\n\t\t\t\t LOGIN PAGE \n";
     
     cout << " \n\t\t Enter Your Password: " << endl;
-            while(ch != '\r')
+            for (int j = 0 ; i < strlen(password); j++)
             {
                 ch = getch();
                 upass[i] = ch;
-                cout << "U";
+                cout << 'X';
                 i++;
             }
-        
-        for(int k = 0 ; k < strlen(upass) - 1; i++)
-        {
-            if (upass[i] = password[i])
+
+            int match = strcmp(upass, password);
+            if (match == 0)
             {
-                count++;
+                cout << endl << "The Password Is Correct."<< endl
+                             << "login Successful :)" << endl;
             }
-        }
 
-        if (count == strlen(password))
-        {
-            cout << "The password is correct ."
-                << "Login Succesfull :)"<< endl;
-        }
-
-        else{
-            cout << endl << "Login Unsuccessful";
-        }
+            else{
+                cout << endl << "Wrong Password" ;
+            }
+        
 }
 
 int main()
